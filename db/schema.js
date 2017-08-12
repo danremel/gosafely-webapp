@@ -34,6 +34,7 @@ const userSchema = mongoose.Schema({
         zipCode: String
     },
     age: Number,
+    gender: String,
     height: String,
     weight: String,
     devices: [deviceSchema],
