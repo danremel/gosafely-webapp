@@ -42,6 +42,7 @@ const dan = new User({
         zipCode: "30307"
     },
     age: 23,
+    gender: "M",
     height: "5\'8\"",
     weight: "125lbs",
     devices: [danDevice],
