@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-
+const UserController = require("./controllers/user");
 const app = express();
 
 // Change mongoose promise to native promise
@@ -22,6 +22,8 @@ connection.on('error', (err) => {
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/client/build/'));
+
+app.use("/api/user", UserController);
 
 // Connecting to build folder:
 app.get('/', (req, res) => {

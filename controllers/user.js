@@ -15,6 +15,12 @@ router.get("/:id", (req, res) => {
     })
 })
 
+router.post("/", (req, res) => {
+    res.send("Hello");
+    const newUser = new User();
+    console.log(req.body);
+    newUser.name = req.body.user.name;
+})
 
 
 module.exports = router;
