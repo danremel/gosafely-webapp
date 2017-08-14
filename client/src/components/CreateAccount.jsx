@@ -55,8 +55,15 @@ class CreateAccount extends Component {
 
 	_handleSubmit = (e) => {
 		e.preventDefault();
+		console.log(this.state);
+		console.log(e);
 		axios.post("/api/user", this.state).then((res) => {
 			const newState = {...this.state};
+			newState.firstName = res.data.firstName;
+			newState.lastName = res.data.lastName;
+			newState.username = res.data.username;
+			newState.email = res.data.email;
+			newState.password = res.data.password;
 			this.setState(newState);
 			console.log(this.state);
 		})
@@ -81,7 +88,7 @@ class CreateAccount extends Component {
 					<div style={formStyle}>
 						<input onChange={this._handleChangePassword} type="text" name="password" placeholder="Password"/>
 					</div>
-					<input onClick={this._handleSubmit} style={submitStyle} type="submit"/>
+						<input onClick={this._handleSubmit} style={submitStyle} type="submit"/>
 				</form>
 			</div>
 		);

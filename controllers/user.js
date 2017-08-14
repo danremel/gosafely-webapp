@@ -18,8 +18,14 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
     res.send("Hello");
     const newUser = new User();
-    console.log(req.body);
-    newUser.name = req.body.user.name;
+    console.log("POST the req body", req.body);
+  
+    newUser.email = req.body.email;
+    newUser.firstName = req.body.firstName;
+    newUser.lastName = req.body.lastName;
+    newUser.username = req.body.username;
+    newUser.password = req.body.password;
+    newUser.save();
 })
 
 
