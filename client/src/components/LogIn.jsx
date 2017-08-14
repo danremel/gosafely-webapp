@@ -36,7 +36,7 @@ class LogIn extends Component {
                         <input type="text" name="password" placeholder="Password"/>
                     </div>
                     <div>
-                        <button style={submitStyle}><Link style={submitTextStyle} to="/dashboard">Submit</Link></button>
+                        <Link style={submitTextStyle} to="/dashboard"><button style={submitStyle}>Submit</button></Link>
                     </div>
                 </form>
                 <p>Don't have an account? <Link style={LinkStyle} to="/create-account">Sign Up Here</Link></p>
