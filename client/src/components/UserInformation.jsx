@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
 
+
+const pageStyle = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    marginTop: "10%"
+}
+
+const fieldStyle ={
+    width: "10%"
+}
 class UserInformation extends Component {
     render() {
         return (
-            <div>
-                <h3>Enter your infomation:</h3>
+            <div style={pageStyle}>
+                <h3>Enter your information:</h3>
                 <form>
                 <h5>Address:</h5>
                     <div>
@@ -15,22 +26,22 @@ class UserInformation extends Component {
                     </div>
                     <div>
                         <label htmlFor="city"></label>
-                        <input type="text" placeholder="City"/>
+                        <input style={fieldStyle} type="text" placeholder="City"/>
                         <label htmlFor="state"></label>
-                        <input type="text" placeholder="State"/>
+                        <input style={fieldStyle} type="text" placeholder="State"/>
                         <label htmlFor="zipCode"></label>
-                        <input type="text" placeholder="Zip Code"/>
+                        <input style={fieldStyle} type="text" placeholder="Zip Code"/>
                     </div>
                 <h5>Enter Birthday:</h5>
                     <div>
                         <label htmlFor="age"></label>
-                        <input type="text" placeholder="MM/DD/YYYY"/>
+                        <input style={fieldStyle} type="text" placeholder="MM/DD/YYYY"/>
                         <label htmlFor="gender"></label>
-                        <input type="text" placeholder="Gender"/>
+                        <input style={fieldStyle} type="text" placeholder="Gender"/>
                         <label htmlFor="height"></label>
-                        <input type="text" placeholder="Height"/>
+                        <input style={fieldStyle} type="text" placeholder="Height"/>
                         <label htmlFor="weight"></label>
-                        <input type="text" placeholder="Weight"/>
+                        <input style={fieldStyle} type="text" placeholder="Weight"/>
                     </div>
                     <br/>
                     <div>
