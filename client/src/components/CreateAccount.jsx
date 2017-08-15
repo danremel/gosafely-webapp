@@ -134,22 +134,22 @@ class CreateAccount extends Component {
 		console.log(e);
 		axios.post("/api/user", this.state).then((res) => {
 			const newState = {...this.state};
-			newState.firstName = res.data.firstName;
-			newState.lastName = res.data.lastName;
-			newState.username = res.data.username;
-			newState.email = res.data.email;
-			newState.password = res.data.password;
-			newState.phoneNumber = res.data.phoneNumber;
-			newState.age = res.data.age;
-			newState.gender = res.data.gender;
-			newState.height = res.data.height;
-			newState.weight = res.data.weight;
-			newState.streetOne = res.data.streetOne;
-			newState.streetTwo = res.data.streetTwo;
-			newState.city = res.data.city;
-			newState.state = res.data.state;
-			newState.zipCode = res.data.zipCode;
-			newState.deviceId = res.data.devices.deviceId;
+			newState.firstName 		= res.data.firstName;
+			newState.lastName 		= res.data.lastName;
+			newState.username 		= res.data.username;
+			newState.email 			= res.data.email;
+			newState.password 		= res.data.password;
+			newState.phoneNumber 	= res.data.phoneNumber;
+			newState.age 			= res.data.age;
+			newState.gender 		= res.data.gender;
+			newState.height 		= res.data.height;
+			newState.weight 		= res.data.weight;
+			newState.streetOne 		= res.data.streetOne;
+			newState.streetTwo 		= res.data.streetTwo;
+			newState.city 			= res.data.city;
+			newState.state 			= res.data.state;
+			newState.zipCode 		= res.data.zipCode;
+			newState.deviceId 		= res.data.deviceId;
 			this.setState(newState);
 			console.log(this.state);
 		})
