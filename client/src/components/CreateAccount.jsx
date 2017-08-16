@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import axios from 'axios';
+
 
 const PageStyle = {
 	display: "flex",
@@ -133,30 +134,38 @@ class CreateAccount extends Component {
 		console.log(this.state);
 		console.log(e);
 		axios.post("/api/user", this.state).then((res) => {
-			const newState = {...this.state};
-			newState.firstName 		= res.data.firstName;
-			newState.lastName 		= res.data.lastName;
-			newState.username 		= res.data.username;
-			newState.email 			= res.data.email;
-			newState.password 		= res.data.password;
-			newState.phoneNumber 	= res.data.phoneNumber;
-			newState.age 			= res.data.age;
-			newState.gender 		= res.data.gender;
-			newState.height 		= res.data.height;
-			newState.weight 		= res.data.weight;
-			newState.streetOne 		= res.data.streetOne;
-			newState.streetTwo 		= res.data.streetTwo;
-			newState.city 			= res.data.city;
-			newState.state 			= res.data.state;
-			newState.zipCode 		= res.data.zipCode;
-			newState.deviceId 		= res.data.deviceId;
-			this.setState(newState);
+			// const newState = {...this.state};
+			// newState.firstName 		= res.data.firstName;
+			// newState.lastName 		= res.data.lastName;
+			// newState.username 		= res.data.username;
+			// newState.email 			= res.data.email;
+			// newState.password 		= res.data.password;
+			// newState.phoneNumber 	= res.data.phoneNumber;
+			// newState.age 			= res.data.age;
+			// newState.gender 		= res.data.gender;
+			// newState.height 		= res.data.height;
+			// newState.weight 		= res.data.weight;
+			// newState.streetOne 		= res.data.streetOne;
+			// newState.streetTwo 		= res.data.streetTwo;
+			// newState.city 			= res.data.city;
+			// newState.state 			= res.data.state;
+			// newState.zipCode 		= res.data.zipCode;
+			// newState.deviceId 		= res.data.deviceId;
+			this.setState({ redirect: true, id: res.data._id});
 			console.log(this.state);
 		})
 		.catch(err => console.log(err));
 	};
+
+	componentWillMount() {
+		const id = this.props.match.params.userId;
+		console.log(id);
+	}
 	
 	render() {
+		if(this.state.redirect){
+			return <Redirect to={`/dashboard/${this.state.id}`} />
+		}
 		return (
 			<div style={PageStyle}>
 				<h1>Create Account</h1>
