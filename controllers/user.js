@@ -8,17 +8,10 @@ router.get("/", (req, res) => {
         res.json(user);
     });
 });
-router.post("/", (req, res) => {
-    res.send("Hello");
-    const newUser = new User();
-    console.log("POST the req body", req.body);
-});
-router.get("/:id", (req, res) => {
-    User.findById(req.params._id).then((user) => {
-        res.json(user);
-    });
 
-  
+
+router.post("/", (req, res) => {
+    const newUser = new User();
     newUser.email       = req.body.email;
     newUser.firstName   = req.body.firstName;
     newUser.lastName    = req.body.lastName;
@@ -35,7 +28,19 @@ router.get("/:id", (req, res) => {
     newUser.state       = req.body.state;
     newUser.zipCode     = req.body.zipCode;
     newUser.deviceId    = req.body.deviceId;
-    newUser.save();
+    newUser.save().then((user) => {
+        res.json(user);
+    });
+});
+
+
+router.get("/:id", (req, res) => {
+    User.findById(req.params.id).then((user) => {
+        res.json(user);
+    });
+
+  
+   
 });
 
 
