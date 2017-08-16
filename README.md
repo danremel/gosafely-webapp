@@ -22,7 +22,11 @@ For my 3rd project, and first full-stack web app, I created a web app for a loca
 
 ## ERD
 
-![ERD] (wireframe/GoSafelyWebAppERD.png)
+![ERD](wireframe/GoSafelyWebAppERD.png)
+
+## Trello Board
+
+[Click here to view the Trello board](https://trello.com/b/lc08Yxve/gosafely-web-app)
 
 ## Future Development
 
