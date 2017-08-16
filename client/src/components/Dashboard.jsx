@@ -14,6 +14,9 @@ const buttonStyle = {
     margin: "10%",
     color: "white"
 }
+const profilePicStyle = {
+    borderRadius: "50%"
+}
 
 
 class Dashboard extends Component {
@@ -46,6 +49,9 @@ class Dashboard extends Component {
                 <div>
                     <h3>Hello, {this.state.firstName} {this.state.lastName}</h3>
                     <h1>{this.state.username}</h1>
+                </div>
+                <div>
+                    <img style={profilePicStyle} src="http://www.fillmurray.com/200/200" alt="Profile Img"/>
                 </div>
                     <div style={buttonGroupStyle}>
                         <Link to="/settings"><FaCog style={buttonStyle}/></Link>
