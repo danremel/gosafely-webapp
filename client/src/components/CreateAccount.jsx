@@ -15,10 +15,14 @@ const formStyle = {
 const submitStyle = {
 	marginLeft: "35%"
 }
+const logoStyle = {
+    width: "50%"
+}
 class CreateAccount extends Component {
 	constructor(){
 		super();
 		this.state = {
+			// All the user data that needs to be collected and stored
 			firstName: "",
 			lastName: "",
 			username: "",
@@ -47,7 +51,7 @@ class CreateAccount extends Component {
 		}
 	}
 
-
+// List of all the event handlers for changing each input field.
 	_handleChangeFirstName = (e) => {
 		e.preventDefault();
 		const firstName = e.target.value;
@@ -129,28 +133,12 @@ class CreateAccount extends Component {
 		this.setState({deviceId});
 	}
 
+	// Submit handler tells function what to do when info is submitted
 	_handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(this.state);
 		console.log(e);
 		axios.post("/api/user", this.state).then((res) => {
-			// const newState = {...this.state};
-			// newState.firstName 		= res.data.firstName;
-			// newState.lastName 		= res.data.lastName;
-			// newState.username 		= res.data.username;
-			// newState.email 			= res.data.email;
-			// newState.password 		= res.data.password;
-			// newState.phoneNumber 	= res.data.phoneNumber;
-			// newState.age 			= res.data.age;
-			// newState.gender 		= res.data.gender;
-			// newState.height 		= res.data.height;
-			// newState.weight 		= res.data.weight;
-			// newState.streetOne 		= res.data.streetOne;
-			// newState.streetTwo 		= res.data.streetTwo;
-			// newState.city 			= res.data.city;
-			// newState.state 			= res.data.state;
-			// newState.zipCode 		= res.data.zipCode;
-			// newState.deviceId 		= res.data.deviceId;
 			this.setState({ redirect: true, id: res.data._id});
 			console.log(this.state);
 		})
@@ -168,6 +156,7 @@ class CreateAccount extends Component {
 		}
 		return (
 			<div style={PageStyle}>
+				<img style={logoStyle} src="https://static1.squarespace.com/static/58cb12bf9f7456fdfb4cda44/t/59947c98d2b857c27b32b005/1502666605031/?format=1500w" alt=""/>
 				<h1>Create Account</h1>
 				<form>
 					<div style={formStyle}>

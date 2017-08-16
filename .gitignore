@@ -57,3 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+# File containing Twilio api key
+send-sms.js

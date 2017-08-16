@@ -22,7 +22,8 @@ class Dashboard extends Component {
         this.state = {
             id: "",
             username: "",
-            firstName: ""
+            firstName: "",
+            lastName: ""
         }
     }
     componentWillMount(){
@@ -31,7 +32,8 @@ class Dashboard extends Component {
             this.setState({
                 id: res.data.id,
                 username: res.data.username,
-                firstName: res.data.firstName
+                firstName: res.data.firstName,
+                lastName: res.data.lastName
             })
             console.log(res.data.username);
             console.log(res.data);
@@ -42,13 +44,13 @@ class Dashboard extends Component {
         return (
             <div >    
                 <div>
-                    <h3>Hello, {this.state.firstName}</h3>
+                    <h3>Hello, {this.state.firstName} {this.state.lastName}</h3>
                     <h1>{this.state.username}</h1>
                 </div>
                     <div style={buttonGroupStyle}>
-                        <Link to="/settings"><FaCog style={buttonStyle}/></Link>Settings
-                        <Link to="/emergency-contacts"><MdPeople style={buttonStyle}/></Link>Emergency Contacts
-                        <Link to="/my-devices"><MdPermDeviceInformation style={buttonStyle}/></Link>My Devices
+                        <Link to="/settings"><FaCog style={buttonStyle}/></Link>
+                        <Link to="/emergency-contacts"><MdPeople style={buttonStyle}/></Link>
+                        <Link to="/my-devices"><MdPermDeviceInformation style={buttonStyle}/></Link>
                     </div>
                 <div>
                     <button>Create Alert</button>
