@@ -12,6 +12,6 @@ For my 3rd project, and first full-stack web app, I created a web app for a loca
 
 ## Wireframe
 
-(wireframe/LogInWireframe.png)
-(wireframe/CreateAccountWireframe.png)
-(wireframe/DashboardWireframe.png)
+![Login Wireframe](wireframe/LogInWireframe.png)
+![Create Account Wireframe](wireframe/CreateAccountWireframe.png)
+![Dashboard Wireframe](wireframe/DashboardWireframe.png)
