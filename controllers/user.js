@@ -9,7 +9,6 @@ router.get("/", (req, res) => {
     });
 });
 
-
 router.post("/", (req, res) => {
     const newUser = new User();
     newUser.email       = req.body.email;

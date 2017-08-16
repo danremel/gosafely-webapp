@@ -29,7 +29,6 @@ app.use(express.static(__dirname + '/client/build/'));
 app.use("/api/user", UserController);
 
 
-
 app.post('/sms', (req, res) => {
     var twiml = new MessagingResponse();
     twiml.message("The robots are coming! Head for the hills!");
