@@ -30,7 +30,7 @@ class Dashboard extends Component {
         }
     }
     componentWillMount(){
-            const userId = this.props.match.params.id;
+        const userId = this.props.match.params.id;
         axios.get(`/api/user/${userId}`).then((res) => {
             this.setState({
                 id: res.data.id,

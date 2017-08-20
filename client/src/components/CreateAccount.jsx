@@ -146,7 +146,7 @@ class CreateAccount extends Component {
 	};
 
 	componentWillMount() {
-		const id = this.props.match.params.userId;
+		const id = this.props.userId;
 		console.log(id);
 	}
 	

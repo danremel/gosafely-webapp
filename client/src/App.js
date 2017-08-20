@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import LogIn from './components/LogIn';
-import CreateAccount from './components/CreateAccount';
+import LoginPage from './containers/LoginPage';
+import SignUpPage from './containers/SignUpPage';
 import Dashboard from './components/Dashboard';
 import Settings from './components/Settings';
 import EmergencyContacts from './components/EmergencyContacts';
@@ -14,8 +14,8 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-            <Route exact path="/" component={LogIn}/>
-            <Route path="/create-account" component={CreateAccount}/>
+            <Route exact path="/" component={LoginPage}/>
+            <Route path="/create-account" component={SignUpPage}/>
             <Route path="/dashboard/:id" component={Dashboard}/>
             <Route path="/settings" component={Settings}/>
             <Route path="/emergency-contacts" component={EmergencyContacts}/>
